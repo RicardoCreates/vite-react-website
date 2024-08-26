@@ -1,28 +1,77 @@
 .App-header {
-    background-color: #282c34;
-    padding: 20px;
-    color: white;
-    text-align: center;
+    display: flex;
+    justify-content: space-between; /* Platz zwischen den Items */
+    align-items: center;            /* Vertikale Zentrierung */
+    background-color: #333;
+    color: #fff;
+    padding: 10px 20px;
+    position: fixed; /* Fixiert den Header */
+    width: 100%;     /* Volle Breite des Bildschirms */
+    top: 0;          /* Oben positionieren */
+    left: 0;         /* Links positionieren */
+    z-index: 1000;   /* Sicherstellen, dass der Header oben liegt */
 }
 
-.App-header h1 {
-    margin: 0;
-    font-size: 2em;
+.menu-toggle {
+    font-size: 24px;
+    cursor: pointer;
 }
 
-.App-header nav ul {
+.headlineOne {
+    flex: 1; /* Nimmt den verbleibenden Platz ein */
+    text-align: center; /* Zentriert den Text innerhalb des Elements */
+    margin: 0; /* Entfernt Standard-Margen */
+}
+
+.nav {
+    display: flex;
+}
+
+.nav ul {
     list-style: none;
+    margin: 0;
     padding: 0;
     display: flex;
-    justify-content: center;
 }
 
-.App-header nav ul li {
+.nav ul li {
     margin: 0 15px;
 }
 
-.App-header nav ul li a {
-    color: white;
+.nav ul li a {
+    color: #fff;
     text-decoration: none;
-    font-size: 1.2em;
+}
+
+.nav.open {
+    display: block;
+}
+
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block;
+    }
+
+    .nav {
+        display: none; /* Standardmäßig ausblenden auf mobilen Geräten */
+        position: absolute;
+        top: 60px; /* Position unterhalb des Headers */
+        left: 0;
+        width: 100%;
+        background-color: #333;
+        text-align: center;
+    }
+
+    .nav.open {
+        display: block;
+    }
+
+    .nav ul {
+        flex-direction: column;
+        padding: 0;
+    }
+
+    .nav ul li {
+        margin: 20px 0;
+    }
 }
