@@ -1,4 +1,6 @@
 .App-main {
+    display: flex;
+    flex-direction: column;
     flex: 1;
     padding: 20px;
     background-color: #fff;
@@ -16,3 +18,14 @@
 .App-main p {
     font-size: 1.1em;
 }
+
+.centered-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: left;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
