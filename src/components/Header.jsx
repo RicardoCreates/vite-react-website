@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Link } from 'react-router-dom'; // Verwende Link für die Navigation
 import './Header.css';
 
 export default function Header() {
@@ -16,9 +17,9 @@ export default function Header() {
             <h1 className="headlineOne">Meine Webseite</h1>
             <nav className={`nav ${isMenuOpen ? 'open' : ''}`}>
                 <ul>
-                    <li><a href="#home" onClick={() => setIsMenuOpen(false)}>Home</a></li>
-                    <li><a href="#about" onClick={() => setIsMenuOpen(false)}>Über uns</a></li>
-                    <li><a href="#contact" onClick={() => setIsMenuOpen(false)}>Kontakt</a></li>
+                    <li><Link to="/" onClick={toggleMenu}>Home</Link></li>
+                    <li><Link to="/about" onClick={toggleMenu}>Über uns</Link></li>
+                    <li><Link to="/contact" onClick={toggleMenu}>Kontakt</Link></li>
                 </ul>
             </nav>
         </header>

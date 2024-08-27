@@ -1,15 +1,20 @@
-import Header from "./components/Header";
-import Footer from "./components/Footer";
-import MainContent from "./components/MainContent";
-import "./App.css";
+
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Header from './components/Header';
+import MainContent from './components/MainContent';
+import Contact from './components/Contact';
+import './App.css';
 
 export default function App() {
     return (
-        <div className="App">
-            <Header />
-            <MainContent />
-            <Footer />
-        </div>
+        <Router>
+            <div className="App">
+                <Header />
+                <Routes>
+                    <Route path="/" element={<MainContent />} />
+                    <Route path="/contact" element={<Contact />} />
+                </Routes>
+            </div>
+        </Router>
     );
 }
-
